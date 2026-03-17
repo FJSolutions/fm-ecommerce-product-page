@@ -1,13 +1,24 @@
 {
-  "name": "ecommerce-product-page-main",
+  "name": "fbj-fm-ecommerce-product-page",
+  "description": "My implementation of Frontend Mentor's e-Commerce Product Page project",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.27.0"
+  "dependencies": {
+    "jotai": "^2.18.1",
+    "preact": "^10.28.4"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.3",
+    "@types/node": "^24.12.0",
+    "browserslist": "^4.28.1",
+    "lightningcss": "^1.32.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.0"
+  }
 }
