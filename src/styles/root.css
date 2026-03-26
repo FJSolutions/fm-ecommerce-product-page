@@ -1,0 +1,19 @@
+
+:root {
+   --orange: hsl(26, 100%, 55%);
+   --orange-opaque: hsla(26, 100%, 55%, 60%);
+   --orange-pale: hsl(25, 100%, 94%);
+   --blue-very-dark: hsl(220, 13%, 13%);
+   --blue-dark-grayish: hsl(219, 9%, 45%);
+   --blue-grayish: hsl(220, 14%, 75%);
+   --blue-light-grayish: hsl(223, 64%, 98%);
+   --black: hsl(0, 0%, 0%);
+   --black-transparent: hsla(0, 0%, 0%, 75%);
+   --white: hsl(0, 0%, 100%);
+   --grey-light: hsl(0, 0%, 95%);
+
+   --font-weight-regular: 400;
+   --font-weight-bold: 700;
+
+   --max-width: 56rem;
+}

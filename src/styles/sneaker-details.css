@@ -1,0 +1,109 @@
+@import "./media.css";
+
+.sneaker-details {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   h2 {
+      font-size: 3rem;
+      padding: 0;
+      margin: 0.25rem 0 2rem 0;
+      line-height: 2.75rem;
+   }
+
+   button {
+      background-color: var(--orange);
+      color: var(--black);
+      border: none;
+      border-radius: 1rem;
+   }
+
+   .sneaker-prices {
+      display: grid;
+      gap: 0.5rem;
+      grid-template-columns: auto auto 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "price discount" "total total";
+      align-items: center;
+      justify-content: center;
+
+      .price {
+         grid-area: price;
+         font-size: 1.5rem;
+         font-weight: var(--font-weight-bold);
+      }
+
+      .discount {
+         grid-area: discount;
+         padding: 0.25rem 0.75rem;
+         color: var(--white);
+         background-color: var(--black);
+         border-radius: 0.5rem;
+      }
+
+      .total {
+         grid-area: total;
+         text-decoration: line-through;
+      }
+   }
+
+   .sneaker-cart {
+      --height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-block-start: 2rem;
+      gap: 1rem;
+
+      .cart-quantity {
+         --width: 3rem;
+         height: var(--height);
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr;
+         align-items: center;
+         justify-content: space-between;
+         background-color: var(--blue-light-grayish);
+         border-radius: 1rem;
+         text-align: center;
+         font-size: 1.1rem;
+         font-weight: var(--font-weight-bold);
+
+         button {
+            all: unset;
+            color: var(--orange);
+            width: var(--width);
+            cursor: pointer;
+         }
+
+         p {
+            all: unset;
+            display: inline-block;
+            width: var(--width);
+         }
+      }
+
+      .sneaker-add {
+         font-weight: var(--font-weight-bold);
+         width: 100%;
+         height: var(--height);
+         padding: 0;
+         cursor: pointer;
+
+         svg {
+            margin-right: 1rem;
+         }
+      }
+
+      .sneaker-add:hover {
+         background-color: var(--orange-opaque);
+      }
+   }
+
+   @media (--mobile) {
+      .sneaker-cart {
+         flex-direction: column;
+      }
+   }
+}

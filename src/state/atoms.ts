@@ -1,4 +1,4 @@
 import { atom } from "jotai";
 
-export const cartTotalAtom = atom(0)
+export const quantityAtom = atom(0)
 

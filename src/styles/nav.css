@@ -1,0 +1,124 @@
+@import "media.css";
+
+header {
+   nav {
+      margin: 0;
+      padding: 0.6rem 0 0 0;
+
+
+      ul {
+         list-style: none;
+         display: flex;
+         margin: 0;
+         padding: 0;
+         gap: 1.5rem;
+      }
+
+      a {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 6rem;
+         padding: 0 0.5rem;
+         color: var(--blue-grayish);
+         text-decoration: none;
+         border-bottom: solid 3px transparent;
+      }
+
+      a:hover {
+         color: var(--blue-dark-grayish);
+         border-bottom: solid 3px var(--orange);
+      }
+   }
+
+   div {
+      flex-grow: 2;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.5rem;
+
+      .button-icon {
+         anchor-name: --cart-popover;
+      }
+
+      img:hover {
+         cursor: pointer;
+      }
+
+      .avatar:last-child {
+         border: solid 0.15rem transparent;
+      }
+
+      .avatar:hover {
+         border: solid 0.15rem var(--orange);
+         border-radius: 50%;
+      }
+   }
+
+   .nav-right-buttons {
+      button {
+         color: var(--blue-grayish);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 3rem;
+         height: 3rem;
+         cursor: pointer;
+      }
+   }
+
+   .cart-popup[popover-open="true"] {
+      display: grid;
+   }
+
+   .cart-popup {
+      position: absolute;
+      position-anchor: --cart-popover;
+      margin: 0;
+      inset: 0;
+      top: calc(anchor(bottom) + 1rem);
+      left: calc(anchor(center) - 10rem);
+      display: none;
+      grid-template-rows: 1fr 3fr;
+      grid-template-columns: 1fr;
+      gap: 0;
+      min-width: 20rem;
+      padding: 0.5rem;
+      border: 1px solid var(--grey-light);
+      border-radius: 0.75rem;
+      box-shadow: 1rem 1rem 2rem silver;
+
+      h2 {
+         display: block;
+         font-weight: var(--font-weight-bold);
+         font-size: 1.1rem;
+         padding: 1rem 0 1rem 1rem;
+         margin: 0;
+         border-block-end: 1px solid var(--grey-light);
+      }
+
+      p {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 100%;
+         text-align: center;
+         margin: 0;
+         padding: 0;
+      }
+   }
+
+   @media (--mobile) {
+      nav {
+         ul {
+            display: none;
+         }
+      }
+
+      .cart-popup[popover-open="true"] {
+         left: 0.5rem;
+         width: 95%;
+      }
+   }
+}

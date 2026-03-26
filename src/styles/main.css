@@ -1,25 +1,11 @@
+@import "./root.css";
 @import "./media.css";
+@import "./nav.css";
+@import "./sneaker-details.css";
 
 @font-face {
    font-family: "Kumbh Sans";
    src: url("/fonts/KumbhSans.ttf") format("truetype");
-}
-
-:root {
-   --orange: hsl(26, 100%, 55%);
-   --orange-pale: hsl(25, 100%, 94%);
-   --blue-very-dark: hsl(220, 13%, 13%);
-   --blue-dark-grayish: hsl(219, 9%, 45%);
-   --blue-grayish: hsl(220, 14%, 75%);
-   --blue-light-grayish: hsl(223, 64%, 98%);
-   --black: hsl(0, 0%, 0%);
-   --black-transparent: hsla(0, 0%, 0%, 75%);
-   --white: hsl(0, 0%, 100%);
-
-   --font-weight-regular: 400;
-   --font-weight-bold: 700;
-
-   --max-width: 66rem;
 }
 
 body {
@@ -40,11 +26,22 @@ header, main, footer {
    margin: 0 auto;
 }
 
+header {
+   display: flex;
+   align-items: center;
+   justify-content: stretch;
+   gap: 2.5rem;
+   border-bottom: solid 1px var(--grey-light);
+}
+
 main {
    flex-grow: 1;
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-template-rows: auto 1fr;
+   gap: 2rem;
+   margin: 5rem auto 0 auto;
+   width: 100%;
 }
 
 footer {
@@ -58,4 +55,8 @@ footer {
    font-weight: var(--font-weight-bold);
    letter-spacing: 0.25rem;
    text-transform: uppercase;
+}
+
+.button-icon {
+   all: unset;
 }

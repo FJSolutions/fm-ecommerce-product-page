@@ -1,34 +1,49 @@
 import { useAtom } from "jotai";
-import { cartTotalAtom } from "../state/atoms.ts";
-import "./SneakerDetails.module.css"
+import { quantityAtom } from "../state/atoms.ts";
 
 export const SneakerDetails = () => {
-   const total = useAtom(cartTotalAtom)
+   const [quantity, setQuantity] = useAtom(quantityAtom)
+
+   const reduceQuantity = () => {
+      if (quantity > 0)
+         setQuantity(quantity - 1)
+   }
+
+   const increaseQuantity = () => {
+      setQuantity(quantity + 1)
+   }
 
    return (
-      <section>
+      <section className="sneaker-details">
          <p class="company-name">Sneaker Company</p>
-         <h3>Fall Limited Edition Sneakers</h3>
+         <h2>Fall Limited Edition Sneakers</h2>
          <p>
             These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole,
             they’ll withstand everything the weather can offer.
          </p>
 
-         <p>
-            <span>$125.00</span>
-            <span>50%</span>
-            <span>$250.00</span>
+         <p class="sneaker-prices">
+            <span class="price">$125.00</span>
+            <span class="discount">50%</span>
+            <span class="total">$250.00</span>
          </p>
 
-         <div class="cart-quantity">
-            <button type="button" aria-label="add an item">+</button>
-            <span>{total}</span>
-            <button type="button" aria-label="remove an item">-</button>
+         <div class="sneaker-cart">
+            <div class="cart-quantity">
+               <button type="button" aria-label="add an item" onClick={reduceQuantity}>-</button>
+               <p>{quantity}</p>
+               <button type="button" aria-label="add an item" onClick={increaseQuantity}>+</button>
+            </div>
+
+            <button type="button" class="sneaker-add">
+               <svg width="15" height="15" viewBox="0 0 22 20">
+                  <path
+                     d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                     fill="currentColor" fill-rule="nonzero"/>
+               </svg>
+               <span>Add to cart</span>
+            </button>
          </div>
-         <button type="button">
-            <img src="/images/icon-cart.svg" width="15" height="15" alt="cart icon"/>
-            <span>Add to cart</span>
-         </button>
       </section>
    )
 }
