@@ -1,4 +1,4 @@
-# E-commerce product page project
+# E-commerce product page
 
 This is my implementation of the
 [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6).
@@ -14,7 +14,6 @@ Frontend Mentor challenges help you improve your coding skills by building reali
    - [Built with](#built-with)
    - [What I learned](#what-i-learned)
    - [Continued development](#continued-development)
-   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
 
 ## Overview
@@ -82,19 +81,8 @@ const proudOfThisFunc = () => {
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts
-you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-### AI Collaboration
-
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively
-with AI assistants.
-
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
-
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+The page is fully functional frontend for a single product. A backend would need to be added, both to populate the data
+and to record details to the cart.
 
 ## Author
 
