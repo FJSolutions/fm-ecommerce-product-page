@@ -1,6 +1,6 @@
 export const Lightbox = () => {
    return (
-      <section>
+      <section class="lightbox">
          <p>Lightbox</p>
       </section>
    )

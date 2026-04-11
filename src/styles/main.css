@@ -1,6 +1,7 @@
 @import "./root.css";
 @import "./media.css";
 @import "./nav.css";
+@import "./lightbox.css";
 @import "./sneaker-details.css";
 
 @font-face {
@@ -21,6 +22,7 @@ body {
 }
 
 header, main, footer {
+   position: relative;
    width: 100%;
    max-width: var(--max-width);
    margin: 0 auto;
@@ -41,13 +43,24 @@ main {
    grid-template-rows: auto 1fr;
    gap: 2rem;
    margin: 5rem auto 0 auto;
-   width: 100%;
+   padding: 0 1.5rem;
 }
 
 footer {
    font-size: 0.8rem;
    text-align: center;
    padding: 0.5rem;
+}
+
+button {
+   background-color: var(--orange);
+   color: var(--black);
+   border: none;
+   border-radius: 1rem;
+}
+
+button:hover {
+   background-color: var(--orange-opaque);
 }
 
 .company-name {
@@ -59,4 +72,42 @@ footer {
 
 .button-icon {
    all: unset;
+}
+
+.backdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100dvw;
+   height: 100dvh;
+   padding: 0;
+   margin: 0;
+   z-index: 1;
+   background-color: rgba(200, 200, 200, 50%);
+
+   .lightbox {
+      background-color: var(--orange-opaque);
+   }
+}
+
+.hamburger {
+   all: unset;
+   display: none;
+}
+
+@media (--mobile) {
+   main {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      margin: 0;
+   }
+
+   .backdrop {
+      width: 120dvw;
+      height: 120dvh;
+   }
+
+   .hamburger {
+      display: block;
+   }
 }

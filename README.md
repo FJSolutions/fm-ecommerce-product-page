@@ -54,6 +54,7 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [Preact](https://preactjs.com/) - JS library
+- [Jotai](https://jotai.org/)
 - [LightningCSS](https://lightningcss.dev/) - For styles
 
 ### What I learned
