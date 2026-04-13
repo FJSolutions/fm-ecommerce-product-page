@@ -1,12 +1,10 @@
-import { atom, useAtom, useAtomValue, useSetAtom } from "jotai";
-import { cartAtomAdder, selectedProductAtom } from "../state/atoms.ts";
-
-const quantityAtom = atom(0)
+import { useState } from "preact/hooks";
+import { useSnapshot } from "valtio/react";
+import { appState, actions } from "../state/app-state.ts";
 
 export const SneakerDetails = () => {
-   const [quantity, setQuantity] = useAtom(quantityAtom)
-   const selectedProduct = useAtomValue(selectedProductAtom)
-   const setCartItem = useSetAtom(cartAtomAdder)
+   const [quantity, setQuantity] = useState(0);
+   const snap = useSnapshot(appState)
 
    const reduceQuantity = () => {
       if (quantity > 0)
@@ -17,21 +15,16 @@ export const SneakerDetails = () => {
       setQuantity(quantity + 1)
    }
 
-   const addToCart = () => {
-      if (quantity > 0) {
-         // console.log(quantity)
-         setCartItem({...selectedProduct, quantity: quantity})
-      }
-   }
+   const addToCart = () => actions.addToCart({...snap.selectedProduct, quantity})
 
    return (
       <section className="sneaker-details">
          <p class="company-name">Sneaker Company</p>
-         <h2>{selectedProduct.name}</h2>
-         <p class="product-description">{selectedProduct.description}</p>
+         <h2>{snap.selectedProduct.name}</h2>
+         <p class="product-description">{snap.selectedProduct.description}</p>
 
          <p class="sneaker-prices">
-            <span class="price">${selectedProduct.price.toFixed(2)}</span>
+            <span class="price">${snap.selectedProduct.price.toFixed(2)}</span>
             <span class="discount">50%</span>
             <span class="total">$250.00</span>
          </p>

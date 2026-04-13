@@ -2,23 +2,14 @@ import { Nav } from "./components/Nav.tsx";
 import { Footer } from "./components/Footer.tsx";
 import { Lightbox } from "./components/Lightbox.tsx";
 import { SneakerDetails } from "./components/SneakerDetails.tsx";
-import { backdropAtom, mobileMenuAtom, popoverAtom } from "./state/atoms.ts";
 import { Fragment } from "preact";
-import { useAtom, useSetAtom } from "jotai";
+import { actions, appState } from "./state/app-state"
+import { useSnapshot } from "valtio/react";
 
 export function App() {
-   const [showBackdrop, setShowBackdrop] = useAtom(backdropAtom)
-   const setShowCart = useSetAtom(popoverAtom)
-   const setShowMenu = useSetAtom(mobileMenuAtom)
+   const snap = useSnapshot(appState);
 
-   const dismissBackdrop = () => {
-      const toggle = false;
-      setShowBackdrop(toggle)
-      setShowCart(toggle)
-      setShowMenu(toggle)
-   }
-
-   const backdrop = showBackdrop ? <div class="backdrop" onClick={dismissBackdrop}></div> : <Fragment/>
+   const backdrop = snap.showBackdrop ? <div class="backdrop" onClick={actions.hideMenuAndCart}></div> : <Fragment/>
 
    return (
       <>
