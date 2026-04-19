@@ -1,4 +1,47 @@
 
 .lightbox {
-   width: 100%;
+   padding: 0;
+   margin: 0;
+
+   .lightbox-main {
+      padding: 0 0 1rem 0;
+      margin: 0;
+
+      img {
+         width: 100%;
+         border-radius: 0.5rem;
+      }
+   }
+
+   .lightbox-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+         padding: 0;
+         margin: 0;
+         width: 20%;
+
+         button {
+            all: unset;
+         }
+
+         &.active > button > img {
+            border-color: var(--orange);
+            opacity: 0.25;
+            cursor: unset;
+         }
+
+         img {
+            width: 100%;
+            border-radius: 0.5rem;
+            border: solid 0.2rem transparent;
+            cursor: pointer;
+         }
+      }
+   }
 }

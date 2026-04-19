@@ -41,10 +41,10 @@ export const actions = {
    showCart: (show: boolean) => {
       appState.showCart = show
       appState.showBackdrop = show
-      appState.showMobileMenu = !show
+      appState.showMobileMenu = false
    },
    showMobileMenu: (show: boolean) => {
-      appState.showCart = !show
+      appState.showCart = false
       appState.showBackdrop = show
       appState.showMobileMenu = show
    },

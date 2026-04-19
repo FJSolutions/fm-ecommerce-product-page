@@ -38,12 +38,6 @@ export const Nav = () => {
          </div>
       )
 
-   // const toggleMenu = () => {
-   //    const isExpanded = menuButtons?.getAttribute("aria-expanded") === "true";
-   //    document.body.classList.toggle("no-scroll");
-   //    menuButtons?.setAttribute("aria-expanded", (!isExpanded).toString());
-   // }
-
    return (
       <>
          <nav>
