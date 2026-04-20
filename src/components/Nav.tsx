@@ -1,6 +1,6 @@
-import { Fragment } from "preact";
-import { useSnapshot } from "valtio/react";
-import { appState, actions } from "../state/app-state.ts";
+import { Fragment } from "preact"
+import { useSnapshot } from "valtio/react"
+import { actions, appState } from "../state/app-state.ts"
 
 export const Nav = () => {
    const snap = useSnapshot(appState)
@@ -41,7 +41,8 @@ export const Nav = () => {
    return (
       <>
          <nav>
-            <button class="hamburger"
+            <button type="button"
+                    class="hamburger"
                     aria-label="show menu"
                     aria-expanded={snap.showMobileMenu}
                     aria-controls="main-menu"
