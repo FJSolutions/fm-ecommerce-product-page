@@ -9,12 +9,24 @@ import { useSnapshot } from "valtio/react";
 export function App() {
    const snap = useSnapshot(appState);
 
-   const backdrop = snap.showBackdrop ? <div class="backdrop" onClick={actions.hideMenuAndCart}></div> : <Fragment/>
+   const backdrop = () => {
+      if (snap.showBackdrop) {
+         if (snap.showLightbox) {
+            return (<div class="backdrop lightbox-backdrop" onClick={actions.hideMenuAndCart}>
+               <Lightbox/>
+            </div>)
+         }
+
+         return <div class="backdrop" onClick={actions.hideMenuAndCart}></div>
+      }
+
+      return <Fragment/>
+   }
 
    return (
       <>
+         {backdrop()}
          <header>
-            {backdrop}
             <Nav/>
          </header>
          <main>

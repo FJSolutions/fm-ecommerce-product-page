@@ -9,16 +9,20 @@
    src: url("/fonts/KumbhSans.ttf") format("truetype");
 }
 
+* {
+   box-sizing: border-box;
+}
+
 body {
    font-family: "Kumbh Sans", sans-serif;
    font-size: clamp(0.9rem, 1vw, 1.1rem);
    font-weight: var(--font-weight-regular);
-   box-sizing: border-box;
    display: flex;
    flex-direction: column;
    margin: 0;
    padding: 0;
    min-height: 100vh;
+   width: 100dvw;
 }
 
 header, main, footer {
@@ -31,8 +35,7 @@ header, main, footer {
 header {
    display: flex;
    align-items: center;
-   justify-content: stretch;
-   gap: 2.5rem;
+   justify-content: space-between;
    border-bottom: solid 1px var(--grey-light);
 }
 
@@ -40,10 +43,9 @@ main {
    flex-grow: 1;
    display: grid;
    grid-template-columns: 1fr 1fr;
-   grid-template-rows: 1fr auto;
+   grid-template-rows: auto 2fr;
    gap: 2rem;
    margin: 5rem auto 0 auto;
-   padding: 0 1.5rem;
 }
 
 footer {
@@ -84,10 +86,6 @@ button:hover {
    margin: 0;
    z-index: 1;
    background-color: rgba(200, 200, 200, 50%);
-
-   .lightbox {
-      background-color: var(--orange-opaque);
-   }
 }
 
 .hamburger {
@@ -96,10 +94,19 @@ button:hover {
 }
 
 @media (--mobile) {
+   header, main, footer {
+      margin: 0;
+   }
+
    main {
       grid-template-columns: auto;
       grid-template-rows: auto auto;
       margin: 0;
+      gap: 0;
+   }
+
+   footer {
+      padding-top: 2rem;
    }
 
    .backdrop {

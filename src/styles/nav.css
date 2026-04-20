@@ -2,6 +2,8 @@
 @import "./hamburger-menu.css";
 
 header {
+   position: relative;
+
    nav {
       display: flex;
       flex-direction: row;
@@ -58,6 +60,7 @@ header {
 
       .avatar:last-child {
          border: solid 0.15rem transparent;
+         margin-right: 0.5rem;
       }
 
       .avatar:hover {
@@ -146,7 +149,7 @@ header {
             border-radius: 0.25rem;
          }
 
-         .cart-item{
+         .cart-item {
             display: flex;
             flex-direction: row;
             gap: 0.75rem;
@@ -189,9 +192,10 @@ header {
       }
 
       .cart-popup[popover-open="true"] {
-         left: 0;
-         margin: 0 1rem;
-         width: 100%;
+         left: -0.2rem;
+         top: 5rem;
+         margin: 0.5rem;
+         width: calc(100% - 1rem);
       }
    }
 }

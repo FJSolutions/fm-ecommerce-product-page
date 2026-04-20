@@ -7,6 +7,7 @@ interface AppState {
    showCart: boolean
    showMobileMenu: boolean
    selectedProduct: Product
+   showLightbox: boolean
 }
 
 export const products: Product[] = [
@@ -23,7 +24,8 @@ export const appState = proxy<AppState>({
    selectedProduct: products[0],
    showBackdrop: false,
    showCart: false,
-   showMobileMenu: false
+   showMobileMenu: false,
+   showLightbox: false,
 })
 
 export const actions = {
@@ -42,15 +44,25 @@ export const actions = {
       appState.showCart = show
       appState.showBackdrop = show
       appState.showMobileMenu = false
+      appState.showLightbox = false
    },
    showMobileMenu: (show: boolean) => {
       appState.showCart = false
+      appState.showLightbox = false
       appState.showBackdrop = show
       appState.showMobileMenu = show
    },
    hideMenuAndCart: () => {
-      appState.showCart = false
+      appState.showLightbox = false
       appState.showBackdrop = false
+      appState.showCart = false
       appState.showMobileMenu = false
+   },
+   showLightbox: () => {
+      appState.showLightbox = true
+      appState.showBackdrop = true
+      appState.showCart = false
+      appState.showMobileMenu = false
+
    }
 }
